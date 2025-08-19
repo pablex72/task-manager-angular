@@ -1,1 +1,5 @@
-<h1>{{ title }}</h1>
+<pre>
+    {{ todos | json }}
+</pre>
+
+<app-todo-list [todoList]="todos">
