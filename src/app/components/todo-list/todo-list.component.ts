@@ -10,5 +10,5 @@ import { Todo } from 'src/app/interfaces/todos.interfaces';
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent {
-  @Input() todoList?: Todo[] | null;
+  @Input() todoList?: Todo| null;
 }
