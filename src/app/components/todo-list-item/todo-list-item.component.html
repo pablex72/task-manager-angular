@@ -1,3 +1,9 @@
-<pre
-  >{{ todo | json }}
-</pre>
+<div *ngIf="todo" class="todo">
+  <div class="top">
+    <p *ngIf="todo.createdAt">{{ todo.createdAt}}</p>
+    <button>
+      <img src="" alt="cross">
+    </button>
+  </div>
+</div>
+
