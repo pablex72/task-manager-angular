@@ -1,9 +1,16 @@
 <div *ngIf="todo" class="todo">
   <div class="top">
     <p *ngIf="todo.createdAt">{{ todo.createdAt}}</p>
-    <button>
+    <button (click)="{}">
       <img src="assets/x-mark.svg" alt="cross">
     </button>
+  </div>
+  <div class="bottom">
+    <span>
+      {{ todo.description}}
+    </span>
+
+    <!-- agregar dropdown -->
   </div>
 </div>
 
