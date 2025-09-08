@@ -1,6 +1,6 @@
-📝 ToDo App - Angular
+📝 Task Manager - Angular
 
-Aplicación web desarrollada en Angular para la gestión de tareas (ToDo list).
+Aplicación web desarrollada en Angular para la gestión de tareas.
 Este proyecto surge como una práctica de desarrollo frontend con Angular, abarcando conceptos clave como componentes, servicios, directivas, data binding y comunicación con el usuario.
 
 🚀 Características
@@ -15,4 +15,4 @@ Este proyecto surge como una práctica de desarrollo frontend con Angular, abarc
 
 💾 Persistencia local con LocalStorage para no perder tus tareas al recargar.
 
-🎨 Diseño responsivo y limpio con CSS/Tailwind/Bootstrap (dependiendo de lo que uses).
+🎨 Diseño responsivo y limpio.
