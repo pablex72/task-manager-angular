@@ -29,6 +29,19 @@
         width: 18px;
         height: 18px;
       }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        font-size: 14px;
+      }
     }
   }
 }
