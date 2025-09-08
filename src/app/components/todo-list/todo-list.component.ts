@@ -8,7 +8,7 @@ import { TodoListItemComponent } from "../todo-list-item/todo-list-item.componen
   standalone: true,
   imports: [CommonModule, TodoListItemComponent],
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css'],
+  styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoListComponent {
   @Input() todoList?: Todo[] | null;
