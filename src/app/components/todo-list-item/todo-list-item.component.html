@@ -1,6 +1,6 @@
 <div *ngIf="todo" class="todo">
   <div class="top">
-    <p *ngIf="todo.createdAt">{{ todo.createdAt}}</p>
+    <p *ngIf="todo.createdAt">{{ todo.createdAt | dateFormat }}</p>
     <button (click)="{}">
       <img src="assets/x-mark.svg" alt="cross">
     </button>
