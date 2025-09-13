@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TodoListComponent } from "./components/todo-list/todo-list.component";
+import { DatePipe } from './pipes/date.pipe';
 
 @NgModule({
   declarations: [AppComponent],
