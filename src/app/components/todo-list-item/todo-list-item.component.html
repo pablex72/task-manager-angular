@@ -1,7 +1,7 @@
 <div *ngIf="todo" class="todo">
   <div class="top">
     <p *ngIf="todo.createdAt">{{ todo.createdAt | dateFormat }}</p>
-    <button (click)="{}">
+    <button (click)="(removeTodo())">
       <img src="assets/x-mark.svg" alt="cross">
     </button>
   </div>

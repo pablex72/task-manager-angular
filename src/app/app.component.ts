@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Todo } from './interfaces/todos.interfaces';
 import { TodosService } from './components/services/todos.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,22 @@ export class AppComponent {
   // ]
   private todosService = inject(TodosService)
 
-  get todos(){
-    return this.todosService.getTodos()
+  // get todos(){
+  //   return this.todosService.getTodos()
+  // }
+
+  public todos?: Todo[]
+
+  private todosSubscription: Subscription
+
+  constructor(){
+    this.todosSubscription = this.todosService.getTodos().subscribe(todos => {
+
+      this.todos = todos;
+    })
+  }
+
+  ngDestroy() {
+    this.todosSubscription.unsubscribe()
   }
 }

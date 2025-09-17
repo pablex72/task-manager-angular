@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Todo } from 'src/app/interfaces/todos.interfaces';
 import { DatePipe } from "../../pipes/date.pipe";
+import { TodosService } from '../services/todos.service';
 
 @Component({
   selector: 'app-todo-list-item',
@@ -12,4 +13,12 @@ import { DatePipe } from "../../pipes/date.pipe";
 })
 export class TodoListItemComponent {
    @Input() todo?: Todo;
+
+   private todosService = inject(TodosService)
+
+   public removeTodo(){
+    if(!this.todo) return
+    this.todosService.removeTodo(this.todo.id);
+   }
+   
  }
