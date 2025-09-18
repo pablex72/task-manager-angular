@@ -1,0 +1,47 @@
+.todo-form {
+  border-color: whitesmoke;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: rgb(75, 56, 47);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.todo-form .form-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+}
+
+.todo-form .form-group label{
+  font-size: 14px;
+}
+
+.todo-form .form-group input{
+  background: none;
+  outline: none;
+  border: 1px solid rgb(58, 28, 28);
+  padding: .4rem;
+  color: aquamarine;
+}
+
+.todo-form button {
+  background: transparent;
+  border: none;
+  border: 1px solid rgb(248, 232, 232);
+  color: whitesmoke;
+  height: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight:500;
+  transition-duration: .3s;
+
+  &:hover {
+    background-color: rgb(182, 145, 145);
+  }
+}
+
