@@ -4,11 +4,12 @@ import { TodoStatus } from 'src/app/interfaces/todos.interfaces';
 import { formOptions } from 'src/app/config/options';
 import { Todo } from 'src/app/interfaces/todos.interfaces';
 import { FormsModule } from '@angular/forms';
+import { DropdownComponent } from "../dropdown/dropdown.component";
 
 @Component({
   selector: 'app-todo-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, DropdownComponent],
   templateUrl: './todo-form.component.html',
   styleUrls: ['./todo-form.component.css'],
 })
