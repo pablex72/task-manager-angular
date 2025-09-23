@@ -1,11 +1,11 @@
 <div class="selectContainer">
   <div (click)="toggleDropdown()" class="select">
-    <ng-container *ngIf="optionSelected?.name; else placeholderTemplate">
+    <ng-container *ngIf="optionsSelected?.name; else placeholderTemplate">
       <p class="option-select">
-        <span>{{ optionSelected.name }}</span>
+        <span>{{ optionsSelected.name }}</span>
       </p>
     </ng-container>
-    <app-arrow />
+    <app-arrow [open]="open"/>
   </div>
   <div class="options" *ngIf="open">
     <div

@@ -13,7 +13,7 @@
   
   <div class="form-group">
     <label for="description">Estado:</label>
-    <app-dropdown />
+    <app-dropdown [options]="statusOptions" [optionsSelected] = "newTodoStatus" (onSelected)="changeStatus($event)" />
   </div>
 
   <button type="submit">Agregar Tarea</button>

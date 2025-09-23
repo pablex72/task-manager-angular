@@ -31,6 +31,9 @@ export class TodoFormComponent {
     this.todosService.addTodo(newTodo)
     this.newTodoDescription = ''
     this.newTodoStatus = formOptions[0]
+  }
 
+  public changeStatus(newStatus: { value: TodoStatus; name: string}){
+    this.newTodoStatus = newStatus;
   }
  }

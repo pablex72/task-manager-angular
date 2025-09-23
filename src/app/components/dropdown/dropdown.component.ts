@@ -7,12 +7,12 @@ import { ArrowComponent } from "./components/arrow.component";
   standalone: true,
   imports: [BrowserModule, ArrowComponent],
   templateUrl: './dropdown.component.html',
-  styleUrls: ['./dropdown.component.css'],
+  styleUrls: ['./dropdown.component.scss'],
 })
 export class DropdownComponent { 
   @Input() placeholder?: string
   @Input() options: any[] = []
-  @Input() optionSelected?: any
+  @Input() optionsSelected?: any
   @Output() onSelected: EventEmitter<any> = new EventEmitter<any>();
 
   public open: boolean = false;
