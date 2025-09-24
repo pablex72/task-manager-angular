@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { FilterStatus, Todo, TodoStatus } from 'src/app/interfaces/todos.interfaces';
+import { FilterStatus, Orders, Todo, TodoStatus } from 'src/app/interfaces/todos.interfaces';
 // import { Todo } from '..'
 
 
@@ -50,6 +50,15 @@ export class TodosService {
          : this.todos.filter((todo) => todo.status === status);
       this.todosSubject.next(filteredTodos);
     })
+  }
+
+  public orderByDate(order: Orders ) {
+    this.todos.sort((a, b) => {
+      const dateA = new Date (a.createdAt).getTime();
+      const dateB = new Date (b.createdAt).getTime();
+      return order === 'newest' ? dateB - dateA : dateA - dateB;
+    });
+    this.update();
   }
 
   public filterByStatus(status: FilterStatus){
