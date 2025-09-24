@@ -1,16 +1,23 @@
 <div *ngIf="todo" class="todo">
   <div class="top">
     <p *ngIf="todo.createdAt">{{ todo.createdAt | dateFormat }}</p>
-    <button (click)="(removeTodo())">
-      <img src="assets/x-mark.svg" alt="cross">
+    <button (click)="removeTodo()">
+      <img src="assets/x-mark.svg" alt="cross" />
     </button>
   </div>
   <div class="bottom">
-    <span>
-      {{ todo.description}}
+    <span
+      [ngStyle]="{
+        'text-decoration':todo.status === 'finished' ? 'line-through' : 'none'      }"
+    >
+      {{ todo.description }}
     </span>
 
     <!-- agregar dropdown -->
+    <app-dropdown
+      [options]="statusOptions"
+      [optionsSelected]="optionSelected"
+      (onSelected)="changeStatus($event)"
+    />
   </div>
 </div>
-

@@ -1,35 +1,15 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Todo } from 'src/app/interfaces/todos.interfaces';
+import { Todo, TodoStatus } from 'src/app/interfaces/todos.interfaces';
 // import { Todo } from '..'
 
-const tareasDePrueba: Todo[] = [
-    {
-      id: 1,
-      description: 'Tarea 1',
-      createdAt: new Date(),
-      status: 'empty'
-    },
-    {
-      id: 2,
-      description: 'Tarea 2',
-      createdAt: new Date(),
-      status: 'empty'
-    },
-    {
-      id: 3,
-      description: 'Tarea 1',
-      createdAt: new Date(),
-      status: 'empty'
-    }
-  ];
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodosService {
 
-  private todos: Todo[] = tareasDePrueba;
+  private todos: Todo[] = [];
 
   private todosSubject = new BehaviorSubject<Todo[]>(this.todos);
 
@@ -45,6 +25,15 @@ export class TodosService {
   public removeTodo(todoId: Todo["id"]) {
     this.todos = this.todos.filter(todo => todo.id !== todoId)
     this.update()
+  }
+
+  public changeTodoStatus(todoId: Todo['id'], newStatus: TodoStatus) {
+    const todoIndex = this.todos.findIndex((todo) => todo.id === todoId );
+    if(todoIndex !== -1){
+      this.todos[todoIndex].status = newStatus;
+      this.update();
+    }
+    this.update();
   }
 
   public getTodos(): Observable<Todo[]> {
