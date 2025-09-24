@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Todo, TodoStatus } from 'src/app/interfaces/todos.interfaces';
+import { FilterStatus, Todo, TodoStatus } from 'src/app/interfaces/todos.interfaces';
 // import { Todo } from '..'
 
 
@@ -12,9 +12,11 @@ export class TodosService {
   private todos: Todo[] = [];
 
   private todosSubject = new BehaviorSubject<Todo[]>(this.todos);
+  public filterSubject = new BehaviorSubject<FilterStatus>('all')
 
   constructor() {
     this.loadDromLocalStorage()
+    this.setupFiltering()
   }
 
   public addTodo(newTodo: Todo){
@@ -37,6 +39,21 @@ export class TodosService {
   }
 
   public getTodos(): Observable<Todo[]> {
+    return this.todosSubject.asObservable();
+  }
+
+  private setupFiltering() {
+    this.filterSubject.subscribe((status) => {
+      const filteredTodos = 
+        status === 'all'
+         ? this.todos
+         : this.todos.filter((todo) => todo.status === status);
+      this.todosSubject.next(filteredTodos);
+    })
+  }
+
+  public filterByStatus(status: FilterStatus){
+    this.filterSubject.next(status)
     return this.todosSubject.asObservable();
   }
 

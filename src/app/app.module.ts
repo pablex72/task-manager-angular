@@ -6,10 +6,11 @@ import { TodoListComponent } from "./components/todo-list/todo-list.component";
 import { DatePipe } from './pipes/date.pipe';
 import { TodoFormComponent } from "./components/todo-form/todo-form.component";
 import { FormsModule } from '@angular/forms';
+import { TodoFiltersComponent } from "./components/todo-filters/todo-filters.component";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, TodoListComponent, TodoFormComponent, FormsModule],
+  imports: [BrowserModule, TodoListComponent, TodoFormComponent, FormsModule, TodoFiltersComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
